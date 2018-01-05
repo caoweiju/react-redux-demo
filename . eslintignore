@@ -1,0 +1,7 @@
+webpack.config.js
+/*
+!/src
+/src/*
+!/src/scripts
+/src/scripts/*
+!/src/page/pages
