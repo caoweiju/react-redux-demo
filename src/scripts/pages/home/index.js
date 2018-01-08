@@ -1,10 +1,13 @@
 'use strict';
-/* eslint-disable */
-import React from 'react';
-/* eslint-disable */
+
 import ReactDOM from 'react-dom';
+import Store from './store/index.js';
+import App from './components/index.js';
+import {Provider} from 'react-redux';
 
 ReactDOM.render(
-    <h1>Hello, world!</h1>,
+    <Provider store = {Store}>
+        <App />
+    </Provider>,
     document.getElementById('root')
 );
