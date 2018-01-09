@@ -11,7 +11,7 @@ const Consults = ({consults}) => {
     return (<div className="m-consults">
         {
             consults.map((v, i) => {
-                return (<div className="consults-item">
+                return (<div className="consults-item" key={i}>
                     <div className="consults-item-info">
                         <span className="info">{v.name}</span>
                         <span className="info">{v.job}</span>

@@ -6,7 +6,7 @@ let path = require('path');
 module.exports = {
 
     entry: {
-        'home': './src/scripts/pages/home/index.js'
+        home: './src/scripts/pages/home/index.js'
     },
 
     output: {

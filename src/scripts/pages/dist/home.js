@@ -586,18 +586,16 @@ var reducers = (0, _redux.combineReducers)({
   indexReducer: _index.indexReducer,
   dataReducer: _data.dataReducer
 });
+var thunkCreateStore = (0, _redux.applyMiddleware)(_reduxThunk.default)(_redux.createStore);
+var Store = thunkCreateStore(reducers);
+var _default = Store;
 /*
-let thunkCreateStore = applyMiddleware(thunk)(createStore);
-let Store = thunkCreateStore(reducers);
-
-export default Store;
+export default (function(initialState) {
+    let createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+    let store = createStoreWithMiddleware(reducers, initialState);
+    return store;
+})({});
 */
-
-var _default = function (initialState) {
-  var createStoreWithMiddleware = (0, _redux.applyMiddleware)(_reduxThunk.default)(_redux.createStore);
-  var store = createStoreWithMiddleware(reducers, initialState);
-  return store;
-}({});
 
 exports.default = _default;
 
@@ -21629,7 +21627,8 @@ var Consults = function Consults(_ref) {
     className: "m-consults"
   }, consults.map(function (v, i) {
     return _react.default.createElement("div", {
-      className: "consults-item"
+      className: "consults-item",
+      key: i
     }, _react.default.createElement("div", {
       className: "consults-item-info"
     }, _react.default.createElement("span", {
