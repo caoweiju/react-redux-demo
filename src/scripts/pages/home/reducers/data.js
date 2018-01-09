@@ -2,7 +2,7 @@
 
 import {CONSULTS} from './../actions/data.js';
 
-export const indexReducer = (
+export const dataReducer = (
     state = {
         consults: [] // 评论
     }, action

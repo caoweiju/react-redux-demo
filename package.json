@@ -17,11 +17,20 @@
   },
   "homepage": "https://github.com/caoweiju/react-redux-demo#readme",
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/preset-env": "^7.0.0-beta.37",
+    "@babel/preset-react": "^7.0.0-beta.37",
+    "@babel/preset-stage-3": "^7.0.0-beta.37",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "mustache": "^2.3.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "string": "^3.3.3"
   },
   "devDependencies": {
     "eslint": "^4.14.0",

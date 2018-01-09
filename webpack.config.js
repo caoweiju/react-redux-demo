@@ -1,5 +1,8 @@
 'use strict';
+
 /* eslint-disable */
+let path = require('path');
+
 module.exports = {
 
     entry: {
@@ -7,23 +10,24 @@ module.exports = {
     },
 
     output: {
-        path: __dirname + '/src/scripts/pages/dist',
+        path: path.join(__dirname + '/src/scripts/pages/dist'),
         filename: '[name].js'
     },
 
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
-            'ui': __dirname + '/src/scripts/ui',
-            'common': __dirname + '/src/scripts/common'
+            'ui': path.join(__dirname + '/src/scripts/ui'),
+            'common': path.join(__dirname + '/src/scripts/common')
         }
     },
-
+    /*
+    // 早期版本的webpack配置
     module: {
         loaders: [
             {
                 test: /\.(js|jsx)$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
                     presets: ['es2015', 'stage-0', 'react']
@@ -39,5 +43,20 @@ module.exports = {
             }
         ]
     }
+    */
+    // webpack3的配置
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/stage-3', '@babel/react']
+                    }
+                }
+            }
+        ]
+    }
 };
-/* eslint-disable */

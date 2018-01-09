@@ -1,13 +1,14 @@
 'use strict';
 
-import ReactDOM from 'react-dom';
+import React from "react";  // eslint-disable-line
+import {render} from 'react-dom';
 import Store from './store/index.js';
-import App from './components/index.js';
+import App from './components/app.js';
 import {Provider} from 'react-redux';
 
-ReactDOM.render(
+render(
     <Provider store = {Store}>
         <App />
     </Provider>,
-    document.getElementById('root')
+    document.getElementById('app')
 );

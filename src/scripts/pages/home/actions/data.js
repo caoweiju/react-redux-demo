@@ -5,34 +5,30 @@ let initConsults = [
     {
         id: 0,
         name: 'feifei',
-        age: 20,
-        sex: 'female',
         job: 'teacher',
-        place: 'beijing'
+        place: 'beijing',
+        data: '这个是啥子东东'
     },
     {
         id: 1,
         name: 'dede',
-        age: 21,
-        sex: 'female',
         job: 'stu',
-        place: 'nanjing'
+        place: 'nanjing',
+        data: '这个是啥子西西'
     },
     {
         id: 2,
         name: 'soso',
-        age: 14,
-        sex: 'male',
         job: 'stu',
-        place: 'shanghai'
+        place: 'shanghai',
+        data: '这个是啥子南南'
     },
     {
         id: 3,
         name: 'huihui',
-        age: 40,
-        sex: 'female',
         job: 'boss',
-        place: 'beijing'
+        place: 'beijing',
+        data: '这个是啥子北北'
     }
 ];
 
@@ -45,8 +41,8 @@ let fetchData = (config, callback) => {
 export const LISTCONSULTS = 'LISTCONSULTS';
 export const listConsults = (config) => {
     return dispatch => {
-        fetchData(config, consults => {
-            dispatch(consults(consults));
+        fetchData(config, consultsData => {
+            dispatch(consults(consultsData));
         });
     };
 };
