@@ -77,5 +77,5 @@ body {
 .img {
   height: 200px;
   width: 200px;
-  background-image: url(images/head.jpeg);
+  background-image: url(../images/home/head.jpeg);
   background-size: 100% 100%; }

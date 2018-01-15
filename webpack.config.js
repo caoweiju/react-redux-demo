@@ -19,6 +19,7 @@ module.exports = {
 
     output: {
         path: path.join(__dirname + '/src/dist'),
+        // publicPath: path.join(__dirname + '/src/dist/'), // 加载外部资源，此选项指定在浏览器中所引用的「此输出目录对应的公开 URL」
         filename: 'js/[name].js'
     },
 
@@ -89,6 +90,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
+                            useRelativePath: true, // 图片相对路径
                             outputPath: 'images/'
                         }
                     }
