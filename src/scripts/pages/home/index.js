@@ -1,5 +1,7 @@
 'use strict';
 
+import 'stylepages/home.scss';
+
 import React from "react";  // eslint-disable-line
 import {render} from 'react-dom';
 import Store from './store/index.js';
