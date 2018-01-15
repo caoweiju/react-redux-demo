@@ -19717,7 +19717,9 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement(_react.Fragment, null, _react.default.createElement(_index2.default, null), _react.default.createElement(_index3.default, null));
+      return _react.default.createElement(_react.Fragment, null, _react.default.createElement(_index2.default, null), _react.default.createElement(_index3.default, null), _react.default.createElement("div", {
+        className: "img"
+      }, " "));
     }
   }]);
 

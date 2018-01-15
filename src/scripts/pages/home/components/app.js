@@ -28,6 +28,7 @@ export default class App extends Component {
         return (<Fragment>
             <Article />
             <Consults />
+            <div className="img"> </div>
         </Fragment>);
     }
 }

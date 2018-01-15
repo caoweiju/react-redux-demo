@@ -81,8 +81,20 @@ module.exports = {
                     // use style-loader in development
                     fallback: "style-loader"
                 })
+            },
+            {
+                test: /\.(png|svg|jpg|gif|jpeg)$/,
+                use: [
+                    {   
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'images/'
+                        }
+                    }
+                ]
             }
-        ]
+            ]
     },
     plugins: [
         extractSass,
