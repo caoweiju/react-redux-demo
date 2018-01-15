@@ -1,3 +1,9 @@
+/*
+ * @Author: weiu.cao 
+ * @Date: 2018-01-15 17:29:39 
+ * @Last Modified by:   weiju.cao 
+ * @Last Modified time: 2018-01-15 17:29:39 
+ */
 'use strict';
 
 import 'stylepages/home.scss';

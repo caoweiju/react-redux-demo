@@ -1,3 +1,9 @@
+/*
+ * @Author: weiu.cao 
+ * @Date: 2018-01-15 17:29:16 
+ * @Last Modified by:   weiju.cao 
+ * @Last Modified time: 2018-01-15 17:29:16 
+ */
 'use strict';
 
 /* eslint-disable */
@@ -19,6 +25,7 @@ module.exports = {
 
     output: {
         path: path.join(__dirname + '/src/dist'),
+        // publicPath:'/'
         // publicPath: path.join(__dirname + '/src/dist/'), // 加载外部资源，此选项指定在浏览器中所引用的「此输出目录对应的公开 URL」
         filename: 'js/[name].js'
     },
@@ -79,6 +86,7 @@ module.exports = {
                     }, {
                         loader: "sass-loader"
                     }],
+                    // publicPath: './../', // 加载外部资源，把路径重新定义到dist目录下，而不是css里面
                     // use style-loader in development
                     fallback: "style-loader"
                 })
