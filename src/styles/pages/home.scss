@@ -1,5 +1,7 @@
-html,
-body,
+@charset "utf-8";
+
+@import './../lib/base.scss';
+
 #app{
     width: 100%;
     margin: 0;
