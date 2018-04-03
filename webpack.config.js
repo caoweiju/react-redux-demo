@@ -1,12 +1,12 @@
+/* eslint-disable */
 /*
  * @Author: weiu.cao 
  * @Date: 2018-01-15 17:29:16 
- * @Last Modified by:   weiju.cao 
- * @Last Modified time: 2018-01-15 17:29:16 
+ * @Last Modified by: weiju.cao
+ * @Last Modified time: 2018-01-16 18:14:30
  */
 'use strict';
 
-/* eslint-disable */
 let path = require('path');
 var webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -35,6 +35,7 @@ module.exports = {
         extensions: ['.js', '.jsx'],
         alias: {
             'stylepages': path.join(__dirname + '/src/styles/pages'),
+            'stylelib': path.join(__dirname + '/src/styles/lib'),
             'scripts': path.join(__dirname + '/src/scripts/pages'),
             'commonjs': path.join(__dirname + '/src/scripts/common')
         }
