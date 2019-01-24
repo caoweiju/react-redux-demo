@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/caoweiju/react-redux-demo#readme",
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.37",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
     "@babel/preset-env": "^7.0.0-beta.37",
     "@babel/preset-react": "^7.0.0-beta.37",
     "@babel/preset-stage-3": "^7.0.0-beta.37",
@@ -36,11 +37,11 @@
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
     "string": "^3.3.3",
-    "style-loader": "^0.19.1",
-    "webpack": "^3.10.0"
+    "style-loader": "^0.19.1"
   },
   "devDependencies": {
     "eslint": "^4.14.0",
-    "eslint-plugin-react": "^7.5.1"
+    "eslint-plugin-react": "^7.5.1",
+    "webpack": "^3.12.0"
   }
 }

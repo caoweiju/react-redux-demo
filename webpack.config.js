@@ -3,7 +3,7 @@
  * @Author: weiu.cao 
  * @Date: 2018-01-15 17:29:16 
  * @Last Modified by: weiju.cao
- * @Last Modified time: 2018-01-16 18:14:30
+ * @Last Modified time: 2019-01-24 21:55:06
  */
 'use strict';
 
@@ -75,7 +75,8 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env', '@babel/stage-3', '@babel/react']
+                        presets: ['@babel/preset-env', '@babel/stage-3', '@babel/react'],
+                        plugins: [["@babel/plugin-proposal-decorators", { "decoratorsBeforeExport": true }]]
                     }
                 }
             },

@@ -7,24 +7,6 @@ import React ,{Component} from "react";  // eslint-disable-line
 import Store from './../../store/index.js'; // eslint-disable-line
 import {connect} from 'react-redux';
 
-const Consults = ({consults}) => {
-    return (<div className="m-consults">
-        {
-            consults.map((v, i) => {
-                return (<div className="consults-item" key={i}>
-                    <div className="consults-item-info">
-                        <span className="info">{v.name}</span>
-                        <span className="info">{v.job}</span>
-                        <span className="info">{v.place}</span>
-                    </div>
-                    <div className="consults-item-data">
-                        {v.data}
-                    </div>
-                </div>);
-            })
-        }
-    </div>);
-};
 
 const mapStateToProps = state => {
     let data = state.dataReducer;
@@ -37,10 +19,31 @@ const mapDispatchToProps = dispatch => {
     return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Consults);
+@connect(mapStateToProps, mapDispatchToProps)
+export default class Consults extends Component {
+    render(){
+        let {consults} = this.props;
+        return (<div className="m-consults">
+            {
+                consults.map((v, i) => {
+                    return (<div className="consults-item" key={i}>
+                        <div className="consults-item-info">
+                            <span className="info">{v.name}</span>
+                            <span className="info">{v.job}</span>
+                            <span className="info">{v.place}</span>
+                        </div>
+                        <div className="consults-item-data">
+                            {v.data}
+                        </div>
+                    </div>);
+                })
+            }
+        </div>);
+    }
+};
+
 
 /*
-
 // 不需要mapStateToProps的时候，也不需要mapDispatchToProps，但是需要异步dispatch
 export default connect()(Article);
 

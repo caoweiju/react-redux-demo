@@ -7,25 +7,6 @@ import React ,{Component} from "react";  // eslint-disable-line
 import Store from './../../store/index.js'; // eslint-disable-line
 import {connect} from 'react-redux';
 
-const Article = ({tit, subtit, tags, content, author, date}) => {
-    return (<div className="m-article">
-        <p className="article-tit">{tit}</p>
-        <p className="article-subtit">{subtit}</p>
-        <div className="article-tags">
-            {
-                tags.map((v, i) => <span className={'tags' + (i === 0 ? ' first-tag' : '')} key={'key' + i}>{v}</span>)
-            }
-        </div>
-        <div className="article-origin">
-            <span className="article-origin-author">{author}</span>
-            <span className="article-origin-date">{date}</span>
-        </div>
-        <div className="article-data">
-            {content}
-        </div>
-    </div>);
-};
-
 const mapStateToProps = state => {
     let index = state.indexReducer;
     return {
@@ -42,7 +23,28 @@ const mapDispatchToProps = dispatch => {
     return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Article);
+@connect(mapStateToProps, mapDispatchToProps)
+export default class Article extends Component {
+    render(){
+        let {tit, subtit, tags, content, author, date} = this.props;
+        return (<div className="m-article">
+            <p className="article-tit">{tit}</p>
+            <p className="article-subtit">{subtit}</p>
+            <div className="article-tags">
+                {
+                    tags.map((v, i) => <span className={'tags' + (i === 0 ? ' first-tag' : '')} key={'key' + i}>{v}</span>)
+                }
+            </div>
+            <div className="article-origin">
+                <span className="article-origin-author">{author}</span>
+                <span className="article-origin-date">{date}</span>
+            </div>
+            <div className="article-data">
+                {content}
+            </div>
+        </div>);
+    }
+};
 
 /*
 
