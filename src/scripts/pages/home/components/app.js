@@ -7,6 +7,9 @@ import Store from './../store/index.js'; // 需要使用非容器内的dispacth�
 import Article from './article/index.js';
 import Consults from './consults/index.js';
 import {init} from './../actions/index.js';
+import Test from './test.js';
+import RoutePage from './routePage.js';
+import {Switch, Route, Link} from 'react-router-dom';
 
 export default class App extends Component {
     constructor(props) {
@@ -29,6 +32,16 @@ export default class App extends Component {
             <Article />
             <Consults />
             <div className="img"> </div>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/test">test</Link></li>
+            </ul>
+            <div>
+                <Switch>
+                    <Route exact path="/" component={Test}/>
+                    <Route path="/test" component={RoutePage}/>
+                </Switch>
+            </div>
         </Fragment>);
     }
 }

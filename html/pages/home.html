@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./../../src/dist/css/home.css">
+    <link rel="stylesheet" href="http://cwj.cc:7878/home.css">
     <script>
     (function(){var h=window,m=document;var c=m.documentElement,a=h.navigator.userAgent,k=c.querySelector('meta[name="viewport"]'),n=0,d=0,o=100,f={},e;if(!n&&!d){var j=a.match(/android/gi),i=a.match(/iphone/gi),l=h.devicePixelRatio;
             if(i){if(l>=3&&(!n||n>=3)){n=3;}else{if(l>=2&&(!n||n>=2)){n=2;}else{n=1;}}}else{n=1;}d=1/n;}c.setAttribute("data-dpr",n);if(k){var g=k.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
@@ -47,6 +47,29 @@
             </div>
         </div>
     </div>
-    <script src="./../../src/dist/js/home.js"></script>
+    <script src="http://cwj.cc:7878/home.js"></script>
+    <script>
+        document.cookie = "s=123";
+        var myHeaders = new Headers({
+            "Content-Type": "appliaction/json",
+            "Content-Length": '300',
+            "X-Custom-Header": "ProcessThisImmediately"
+        });
+
+        var myInit = { method: 'POST',
+                    headers: myHeaders,
+                    mode: 'cors',
+                    cache: 'default',
+                    body: JSON.stringify({A:1,B:2})};
+        fetch('//cwj.cn:7777/testjson',myInit)
+        .then((res)=>{
+            if(res.ok){
+                return res.json();
+            }
+        })
+        .then((res)=>{
+            console.log(res);
+        })
+    </script>
 </body>
 </html>
