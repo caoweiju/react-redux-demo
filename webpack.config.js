@@ -3,15 +3,16 @@
  * @Author: weiu.cao 
  * @Date: 2018-01-15 17:29:16 
  * @Last Modified by: weiju.cao
- * @Last Modified time: 2019-01-25 11:34:07
+ * @Last Modified time: 2019-01-25 14:24:48
  */
 'use strict';
 
 let path = require('path');
 var webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");  // webpack4 不使用这个进行css的打包
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");  // webpack4 使用这个进行css的打包
 
-const extractSass = new ExtractTextPlugin({
+const extractSass = new MiniCssExtractPlugin({
     filename: "css/[name].css",
     disable: process.env.NODE_ENV === "development"
 });
@@ -86,16 +87,22 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: extractSass.extract({
-                    use: [{
+                use: [{
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            // you can specify a publicPath here
+                            // by default it use publicPath in webpackOptions.output
+                            publicPath: './../'
+                          }
+                    },
+                    {
                         loader: "css-loader"
                     }, {
                         loader: "sass-loader"
                     }],
                     // publicPath: './../', // 加载外部资源，把路径重新定义到dist目录下，而不是css里面
                     // use style-loader in development
-                    fallback: "style-loader"
-                })
+                    // fallback: "style-loader"
             },
             {
                 test: /\.(png|svg|jpg|gif|jpeg)$/,

@@ -975,9 +975,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _red
   !*** ./src/styles/pages/home.scss ***!
   \************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/styles/pages/home.scss?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/pages/home.scss?");
 
 /***/ })
 
