@@ -3,7 +3,7 @@
  * @Author: weiu.cao 
  * @Date: 2018-01-15 17:29:16 
  * @Last Modified by: weiju.cao
- * @Last Modified time: 2019-01-25 14:24:48
+ * @Last Modified time: 2019-01-25 23:00:32
  */
 'use strict';
 
@@ -67,7 +67,7 @@ module.exports = {
     }
     */
 
-    // webpack3的配置
+    // webpack3的配置 ==》 已经更新到webpack4
     module: {
         rules: [
             {
