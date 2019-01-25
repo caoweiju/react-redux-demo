@@ -1,6 +1,6 @@
 # react-redux-demo
 
-*需要webpack3以上*
+*需要webpack4以上 babel7*
 
 * 运行方式  
 
