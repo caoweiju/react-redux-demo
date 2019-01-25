@@ -3,7 +3,7 @@
  * @Author: weiu.cao 
  * @Date: 2018-01-15 17:29:16 
  * @Last Modified by: weiju.cao
- * @Last Modified time: 2019-01-24 21:55:06
+ * @Last Modified time: 2019-01-25 11:34:07
  */
 'use strict';
 
@@ -17,7 +17,7 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-
+    mode: 'development',
     entry: {
         home: './src/scripts/pages/home/index.js'
         // homecss: './src/styles/pages/home.scss'  // scss入口放到最开始的js中
@@ -75,8 +75,12 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env', '@babel/stage-3', '@babel/react'],
-                        plugins: [["@babel/plugin-proposal-decorators", { "decoratorsBeforeExport": true }]]
+                        presets: ['@babel/preset-env', '@babel/react'],
+                        plugins: [
+                            // ["@babel/plugin-proposal-decorators", { "decoratorsBeforeExport": true }]
+                            ["@babel/plugin-proposal-decorators", { "legacy": true }],
+                            ["@babel/plugin-proposal-class-properties", { "loose" : true }]
+                        ]
                     }
                 }
             },

@@ -1,10 +1,10 @@
 'use strict';
 
 // eslint-disable-next-line
-import React ,{Component} from "react";  // eslint-disable-line
+import React, {Component} from "react";  // eslint-disable-line
 
 // 需要使用非容器内的dispacth时需要引入，使用Store.dispacth来分发action
-import Store from './../../store/index.js'; // eslint-disable-line
+// import Store from './../../store/index.js'; // eslint-disable-line
 import {connect} from 'react-redux';
 
 
@@ -19,11 +19,14 @@ const mapDispatchToProps = dispatch => {
     return {};
 };
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(mapStateToProps)
 export default class Consults extends Component {
-    render(){
+    constructor(props) {
+        super(props);
+    }
+    render() {
         let {consults} = this.props;
-        return (<div className="m-consults">
+        return <div className="m-consults">
             {
                 consults.map((v, i) => {
                     return (<div className="consults-item" key={i}>
@@ -38,7 +41,7 @@ export default class Consults extends Component {
                     </div>);
                 })
             }
-        </div>);
+        </div>;
     }
 };
 

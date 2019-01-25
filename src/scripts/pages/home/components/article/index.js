@@ -25,9 +25,12 @@ const mapDispatchToProps = dispatch => {
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Article extends Component {
-    render(){
+    constructor(props) {
+        super(props);
+    }
+    render() {
         let {tit, subtit, tags, content, author, date} = this.props;
-        return (<div className="m-article">
+        return <div className="m-article">
             <p className="article-tit">{tit}</p>
             <p className="article-subtit">{subtit}</p>
             <div className="article-tags">
@@ -42,9 +45,9 @@ export default class Article extends Component {
             <div className="article-data">
                 {content}
             </div>
-        </div>);
+        </div>;
     }
-};
+}
 
 /*
 
